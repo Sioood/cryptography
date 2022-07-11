@@ -1,7 +1,7 @@
 const mode = document.getElementById('mode'),
   toggle = document.getElementById('toggle'),
   key = document.getElementById('key'),
-  normalText = document.getElementById('normal-text'),
+  decryptedText = document.getElementById('decrypted-text'),
   encryptedText = document.getElementById('encrypted-text'),
   error = document.getElementById('error'),
   run = document.getElementById('run');
@@ -9,28 +9,30 @@ const mode = document.getElementById('mode'),
 toggle.addEventListener('click', () => {
   // console.log(toggle.checked);
   if (toggle.checked) {
-    mode.innerText = 'Decrypt';
+    run.innerText = 'Decrypt';
   } else {
-    mode.innerText = 'Encrypt';
+    run.innerText = 'Encrypt';
   }
 });
 
 run.addEventListener('click', () => {
   // return num > 2 ? console.log(true) : console.log(false);
   if (!key.value) {
-    error.innerText = 'need key';
-  } else if (!normalText.value && !encryptedText.value) {
-    error.innerText = 'need text';
+    error.innerText = '⚠️ Need a key value';
+  } else if (!decryptedText.value && !encryptedText.value) {
+    error.innerText = '⚠️ Need text value';
   } else if (!toggle.checked) {
+    error.innerHTML = '&nbsp';
     encrypt();
   } else if (toggle.checked) {
+    error.innerHTML = '&nbsp';
     decrypt();
   }
 });
 
 function encrypt() {
   let keyArr = key.value.split('');
-  let normalTextArr = normalText.value.split('');
+  let decryptedTextArr = decryptedText.value.split('');
   // console.log(keyArr);
   let i = 0;
   let j = 0;
@@ -39,13 +41,13 @@ function encrypt() {
 
   let encrypt = [];
 
-  while (normalTextArr.length >= i) {
-    if (normalTextArr.length == i) {
+  while (decryptedTextArr.length >= i) {
+    if (decryptedTextArr.length == i) {
       break;
     }
 
     const step = keyArr[j].charCodeAt(0) - 96;
-    arr.push(normalTextArr[i].charCodeAt(0) - 96 + step);
+    arr.push(decryptedTextArr[i].charCodeAt(0) - 96 + step);
     i++;
     if (keyArr.length - 1 == j) {
       j = 0;
@@ -91,7 +93,7 @@ function decrypt() {
     decrypt.push(String.fromCharCode(el + 96));
   });
 
-  normalText.value = decrypt.join('');
+  decryptedText.value = decrypt.join('');
 }
 
 // String.fromCharCode(97 + n)

@@ -2,55 +2,61 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-color: #1d1d1d;
+  --secondary-color: #3f3f3f;
+  --third-color: rgb(200 200 200);
+  --accent-color: #bb86fc;
+}
+
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   text-align: center;
   font-family: system-ui, sans-serif;
-  color: black;
-  background-color: white;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  gap: 0.5rem;
-  border-bottom: solid 1px #aaa;
-  background-color: #eee;
-}
-
-nav a {
-  display: inline-block;
-  min-width: 9rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: solid 1px #aaa;
-  text-align: center;
-  text-decoration: none;
-  color: #555;
-}
-
-nav a[aria-current='page'] {
-  color: #000;
-  background-color: #d4d4d4;
+  color: var(--third-color);
+  background: var(--main-color);
 }
 
 main {
   padding: 1rem;
+  width: 100vw;
+  max-width: 1280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-evenly;
 }
 
 h1 {
   font-weight: bold;
-  font-size: 1.5rem;
+}
+
+.wrapper-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .container {
+  padding: 0 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+
+.wrapper-key {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,16 +64,93 @@ h1 {
   gap: 1rem;
 }
 
+.wrapper-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.wrapper-params {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.params {
+  margin-right: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5rem;
+}
+
+#run {
+  all: unset;
+  padding: 0.5rem 1rem;
+  background: var(--accent-color);
+  color: var(--main-color);
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+input,
+textarea {
+  all: unset;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  background: var(--secondary-color);
+  text-align: left;
+  border-radius: 1rem;
+}
+
+#key {
+  border-radius: 0.7rem;
+}
+
+textarea {
+  height: 20vh;
+}
+
+.text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+label {
+  width: 100%;
+  text-align: left;
+}
+
 #error {
-  color: red;
+  color: #e63b3b;
 }
 
 /* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 3.65rem;
+  height: 1.5rem;
 }
 
 /* Hide default HTML checkbox */
@@ -93,27 +176,27 @@ h1 {
 .slider:before {
   position: absolute;
   content: '';
-  height: 26px;
-  width: 26px;
+  height: 1rem;
+  width: 1rem;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--secondary-color);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: var(--accent-color);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px var(--accent-color);
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(1rem);
+  -ms-transform: translateX(1rem);
+  transform: translateX(1rem);
 }
 
 /* Rounded sliders */
@@ -123,4 +206,11 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media screen and (min-with: 768px) {
+  .wrapper-params {
+    flex-direction: column;
+    background: red;
+  }
 }
