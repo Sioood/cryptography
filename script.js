@@ -1,5 +1,4 @@
-const mode = document.getElementById('mode'),
-  toggle = document.getElementById('toggle'),
+const toggle = document.getElementById('toggle'),
   key = document.getElementById('key'),
   decryptedText = document.getElementById('decrypted-text'),
   encryptedText = document.getElementById('encrypted-text'),

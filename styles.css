@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -30,20 +32,12 @@ main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: space-evenly;
 }
 
 h1 {
   font-weight: bold;
-}
-
-.wrapper-mode {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
 }
 
 .container {
@@ -56,12 +50,47 @@ h1 {
   gap: 3rem;
 }
 
+.wrapper-title {
+  margin: 2rem 0 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.wrapper-title > h5 {
+  font-weight: 400;
+}
+
+.wrapper-params {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .wrapper-key {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  flex: 1 1 11rem;
+}
+
+.params {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+  flex: 1 1 15rem;
 }
 
 .wrapper-toggle {
@@ -72,27 +101,10 @@ h1 {
   gap: 1rem;
 }
 
-.wrapper-params {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.params {
-  margin-right: 1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 5rem;
-}
-
 #run {
   all: unset;
+  margin-left: 3rem;
+  margin-right: 1rem;
   padding: 0.5rem 1rem;
   background: var(--accent-color);
   color: var(--main-color);
@@ -106,6 +118,7 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 5rem;
 }
 
@@ -134,6 +147,7 @@ textarea {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  flex: 1 1 15rem;
 }
 
 label {
@@ -208,9 +222,12 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-@media screen and (max-with: 768px) {
-  .wrapper-params {
-    flex-direction: column;
-    background: red;
+/* @media screen and (max-with: 768px) {
+
+} */
+
+@media screen and (max-with: 425px) {
+  .container {
+    padding: 0 1rem;
   }
 }
