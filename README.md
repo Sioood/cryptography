@@ -1,3 +1,5 @@
-# web-platform-ngkxet
+# Cryptography
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/web-platform-ngkxet)
+## A little tool which can encrypt and decrypt with a word key.
+
+[Lets try ⚡️](https://sioood.github.io/cryptography/)
