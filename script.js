@@ -1,4 +1,5 @@
-const toggle = document.getElementById('toggle'),
+const toggleMethod = document.getElementById('toggle-method'),
+  toggleKey = document.getElementById('toggle-key'),
   key = document.getElementById('key'),
   decryptedText = document.getElementById('decrypted-text'),
   encryptedText = document.getElementById('encrypted-text'),
@@ -9,9 +10,9 @@ run.addEventListener('click', (event) => {
   event.preventDefault();
 });
 
-toggle.addEventListener('click', () => {
-  // console.log(toggle.checked);
-  if (toggle.checked) {
+toggleMethod.addEventListener('click', () => {
+  // console.log(toggleMethod.checked);
+  if (toggleMethod.checked) {
     run.innerText = 'Decrypt';
   } else {
     run.innerText = 'Encrypt';
@@ -24,10 +25,10 @@ run.addEventListener('click', () => {
     error.innerText = '⚠️ Need a key value';
   } else if (!decryptedText.value && !encryptedText.value) {
     error.innerText = '⚠️ Need text value';
-  } else if (!toggle.checked) {
+  } else if (!toggleMethod.checked) {
     error.innerHTML = '&nbsp';
     encrypt();
-  } else if (toggle.checked) {
+  } else if (toggleMethod.checked) {
     error.innerHTML = '&nbsp';
     decrypt();
   }
@@ -62,7 +63,13 @@ function encrypt() {
     encrypt.push(String.fromCharCode(el + 96));
   });
 
-  encryptedText.value = encrypt.join('');
+  console.log(toggleKey.checked);
+
+  if (toggleKey.checked) {
+    encryptedText.value = key.value + '&' + encrypt.join('');
+  } else {
+    encryptedText.value = encrypt.join('');
+  }
 }
 
 function decrypt() {
@@ -94,5 +101,9 @@ function decrypt() {
     decrypt.push(String.fromCharCode(el + 96));
   });
 
-  decryptedText.value = decrypt.join('');
+  if (toggleKey.checked) {
+    decryptedText.value = key.value + '&' + decrypt.join('');
+  } else {
+    decryptedText.value = decrypt.join('');
+  }
 }

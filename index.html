@@ -13,36 +13,55 @@
     <main>
       <div class="wrapper-title">
         <h1>Cryptography</h1>
-        <h5>Encrypt and decrypt message with a word key</h5>
+        <h5>Encrypt and decrypt a message with a word key</h5>
       </div>
       <form action="" method="get" class="container">
         <div class="wrapper-params">
           <div class="wrapper-key">
             <label for="key">Key</label>
-            <input type="text" name="key" id="key" />
+            <input type="text" name="key" id="key" placeholder="Super key" />
+            <h5>
+              If you have included the key, be sure you have removed it :
+              "<em>key</em>&"
+            </h5>
           </div>
           <div class="params">
             <div class="wrapper-toggle">
-              <label for="">change mode</label>
+              <label for="">change method</label>
               <label class="switch">
-                <input type="checkbox" id="toggle" />
+                <input type="checkbox" id="toggle-method" />
                 <span class="slider round"></span>
               </label>
             </div>
-            <button type="submit" id="run">Encrypt</button>
+            <div class="wrapper-toggle">
+              <label for="">Include Key</label>
+              <label class="switch">
+                <input type="checkbox" id="toggle-key" />
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="wrapper">
           <div class="text normal">
             <label for="decrypted-text">Decrypted</label>
-            <textarea name="decrypted-text" id="decrypted-text"></textarea>
+            <textarea
+              name="decrypted-text"
+              id="decrypted-text"
+              placeholder="Text to be decrypted"
+            ></textarea>
           </div>
           <div class="text encrypted">
             <label for="encrypted-text">Encrypted</label>
-            <textarea name="encrypted-text" id="encrypted-text"></textarea>
+            <textarea
+              name="encrypted-text"
+              id="encrypted-text"
+              placeholder="Text to be encrypted"
+            ></textarea>
           </div>
         </div>
         <div id="error">&nbsp</div>
+        <button type="submit" id="run">Encrypt</button>
       </form>
     </main>
 
