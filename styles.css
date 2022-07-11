@@ -69,17 +69,18 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 1rem;
 }
 
 .wrapper-key {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  flex: 1 1 11rem;
+  /* flex: 1 1 11rem; */
 }
 
 .params {
@@ -90,7 +91,7 @@ h1 {
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 2rem;
-  flex: 1 1 15rem;
+  /* flex: 1 1 15rem; */
 }
 
 .wrapper-toggle {
@@ -118,7 +119,7 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 5rem;
 }
 
@@ -138,6 +139,7 @@ textarea {
 
 textarea {
   height: 20vh;
+  overflow-wrap: break-word;
 }
 
 .text {
@@ -147,7 +149,7 @@ textarea {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  flex: 1 1 15rem;
+  /* flex: 1 1 15rem; */
 }
 
 label {
@@ -222,11 +224,31 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* @media screen and (max-with: 768px) {
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 3rem;
+  }
 
-} */
+  .wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-@media screen and (max-with: 425px) {
+  .wrapper-params {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .params {
+    justify-content: space-around;
+  }
+
+  #run {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
   .container {
     padding: 0 1rem;
   }

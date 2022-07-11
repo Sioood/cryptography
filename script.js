@@ -5,6 +5,10 @@ const toggle = document.getElementById('toggle'),
   error = document.getElementById('error'),
   run = document.getElementById('run');
 
+run.addEventListener('click', (event) => {
+  event.preventDefault();
+});
+
 toggle.addEventListener('click', () => {
   // console.log(toggle.checked);
   if (toggle.checked) {
@@ -32,7 +36,6 @@ run.addEventListener('click', () => {
 function encrypt() {
   let keyArr = key.value.split('');
   let decryptedTextArr = decryptedText.value.split('');
-  // console.log(keyArr);
   let i = 0;
   let j = 0;
 
@@ -65,7 +68,6 @@ function encrypt() {
 function decrypt() {
   let keyArr = key.value.split('');
   let encryptedTextArr = encryptedText.value.split('');
-  // console.log(keyArr);
   let i = 0;
   let j = 0;
 
@@ -94,5 +96,3 @@ function decrypt() {
 
   decryptedText.value = decrypt.join('');
 }
-
-// String.fromCharCode(97 + n)

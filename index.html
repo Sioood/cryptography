@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Cryptography</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <title>Cryptography</title>
   </head>
+
   <body>
     <main>
       <div class="wrapper-title">
         <h1>Cryptography</h1>
         <h5>Encrypt and decrypt message with a word key</h5>
       </div>
-      <div class="container">
+      <form action="" method="get" class="container">
         <div class="wrapper-params">
           <div class="wrapper-key">
             <label for="key">Key</label>
@@ -31,7 +29,7 @@
                 <span class="slider round"></span>
               </label>
             </div>
-            <button id="run">Encrypt</button>
+            <button type="submit" id="run">Encrypt</button>
           </div>
         </div>
         <div class="wrapper">
@@ -45,7 +43,9 @@
           </div>
         </div>
         <div id="error">&nbsp</div>
-      </div>
+      </form>
     </main>
+
+    <script type="module" src="script.js"></script>
   </body>
 </html>
