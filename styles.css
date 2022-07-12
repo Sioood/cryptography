@@ -65,6 +65,10 @@ h5 {
   gap: 1rem;
 }
 
+.wrapper-title > h5 {
+  color: var(--third-color);
+}
+
 .wrapper-params {
   width: 100%;
   display: flex;
@@ -100,23 +104,6 @@ h5 {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-}
-
-#run {
-  all: unset;
-  margin-left: 3rem;
-  margin-right: 1rem;
-  padding: 1rem 2rem;
-  background: var(--accent-color);
-  color: var(--main-color);
-  font-weight: 700;
-  border-radius: 0.7rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-#run:hover {
-  transform: scale(0.97);
 }
 
 .wrapper {
@@ -221,6 +208,22 @@ input:checked + .slider:before {
   transform: translateX(1rem);
 }
 
+#run {
+  all: unset;
+  margin: 0 1rem 5rem 3rem;
+  padding: 1rem 2rem;
+  background: var(--accent-color);
+  color: var(--main-color);
+  font-weight: 700;
+  border-radius: 0.7rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#run:hover {
+  transform: scale(0.97);
+}
+
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
@@ -250,7 +253,8 @@ input:checked + .slider:before {
   }
 
   #run {
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
