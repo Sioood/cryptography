@@ -16,6 +16,10 @@ import {
 function Home() {
   const [method, setMethod] = useState<string>("encrypt");
 
+  const toggleMethod = (to: string) => {
+    setMethod(to);
+  };
+
   const key = createRef<HTMLInputElement>();
   const decrypted = createRef<HTMLTextAreaElement>();
   const encrypted = createRef<HTMLTextAreaElement>();
@@ -94,7 +98,7 @@ function Home() {
         <div className="mb-10 w-full flex flex-col sm:items-center">
           <h1 className="text-3xl font-bold">Cryptography</h1>
           <h2 className="text-muted-foreground">
-            Encrypt and decrypt a message with a word key
+            Perform encryption and decryption on a message using a specific key.
           </h2>
         </div>
 
@@ -146,13 +150,13 @@ function Home() {
                 required={true}
                 ref={key}
               />
-              <h6 className="text-xs text-muted-foreground">
+              {/* <h6 className="text-xs text-muted-foreground">
                 If you have included the key, be sure you have removed it :
                 "key&"
-              </h6>
+              </h6> */}
             </div>
 
-            <div className="w-full flex flex-wrap items-center justify-center gap-4">
+            {/* <div className="w-full flex flex-wrap items-center justify-center gap-4">
               <div className="flex items-center space-x-2">
                 <Checkbox id="includeKey" />
                 <label
@@ -162,7 +166,7 @@ function Home() {
                   Include the key
                 </label>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="w-full flex flex-wrap justify-center gap-6">
@@ -274,10 +278,25 @@ function Home() {
           </div>
 
           <div className="inline-flex gap-1">
-            <Button type="submit" variant="outline" size="sm" className="w-fit">
+            <Button
+              onClick={() => {
+                toggleMethod("decrypt");
+              }}
+              type="submit"
+              variant="outline"
+              size="sm"
+              className="w-fit"
+            >
               Decrypt
             </Button>
-            <Button type="submit" size="sm" className="w-fit">
+            <Button
+              onClick={() => {
+                toggleMethod("encrypt");
+              }}
+              type="submit"
+              size="sm"
+              className="w-fit"
+            >
               Encrypt
             </Button>
           </div>
