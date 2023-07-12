@@ -1,17 +1,15 @@
 import { useState, createRef } from "react";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Switch } from "@/components/ui/switch";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { Label } from "../components/ui/label";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "../components/ui/tooltip";
 
 function Home() {
   const [method, setMethod] = useState<string>("encrypt");
@@ -55,7 +53,7 @@ function Home() {
       : (decrypted.current.value = String.fromCharCode(...encryptedArray));
   };
 
-  const copyText = (text: string, e: Event) => {
+  const copyText = (text: string, e: any) => {
     const target = e.target as HTMLElement;
     const button = target.closest("button");
 
@@ -117,7 +115,7 @@ function Home() {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger
-                      onClick={(e: Event) => {
+                      onClick={(e) => {
                         e.preventDefault();
                       }}
                     >
@@ -175,7 +173,7 @@ function Home() {
               <div className="relative">
                 <Button
                   type="button"
-                  onClick={(e: Event) => {
+                  onClick={(e) => {
                     if (!decrypted.current) return;
 
                     copyText(decrypted.current.value, e);
@@ -228,7 +226,7 @@ function Home() {
               <div className="relative">
                 <Button
                   type="button"
-                  onClick={(e: Event) => {
+                  onClick={(e) => {
                     if (!encrypted.current) return;
 
                     copyText(encrypted.current.value, e);
