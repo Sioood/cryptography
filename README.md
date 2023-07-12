@@ -9,3 +9,5 @@ You can encrypt multiple time a text, like setup multiple password to an account
 
 The key is the private thing of this system and the text is public. You can share the text with almost 100% confidence.
 It's like a lock and the key. Anyone can see the lock but anyone cannot open it. Have this public is not a security fail or a danger.
+
+[Let's test it !]("https://cryptography-key.netlify.app/")

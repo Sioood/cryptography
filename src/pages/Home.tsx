@@ -300,6 +300,23 @@ function Home() {
           </div>
         </form>
       </main>
+
+      <footer className="fixed bottom-0 py-4 w-full inline-flex justify-center gap-2">
+        <a
+          className="text-xs text-muted-foreground underline"
+          href="https://github.com/Sioood/cryptography"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          className="text-xs text-muted-foreground underline"
+          href="https://theodupont.fr"
+          target="_blank"
+        >
+          © Sioood
+        </a>
+      </footer>
     </>
   );
 }
